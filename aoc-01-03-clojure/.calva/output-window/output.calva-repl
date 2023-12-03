@@ -1,233 +1,44 @@
-; This is the Calva evaluation results output window.
-; TIPS: The keyboard shortcut `ctrl+alt+o o` shows and focuses this window
-;   when connected to a REPL session.
-; Please see https://calva.io/output/ for more info.
-; Happy coding! ♥️
-
-; Jacking in...
-; Connecting using "Leiningen" project type.
-; You can make Calva auto-select this.
-;   - See https://calva.io/connect-sequences/
-; 
-; Starting Jack-in Terminal: pushd /home/ojarrisonn_/local-dev/aoc/2023/aoc-clj ; lein update-in :dependencies conj '[nrepl,"1.0.0"]' -- update-in :plugins conj '[cider/cider-nrepl,"0.28.5"]' -- update-in '[:repl-options,:nrepl-middleware]' conj '["cider.nrepl/cider-middleware"]' -- repl :headless ; popd
-; Using host:port 127.0.0.1:39019 ...
-; Hooking up nREPL sessions ...
-; Connected session: clj
-; TIPS:
-;   - You can edit the contents here. Use it as a REPL if you like.
-;   - `alt+enter` evaluates the current top level form.
-;   - `ctrl+enter` evaluates the current form.
-;   - `alt+up` and `alt+down` traverse up and down the REPL command history
-;      when the cursor is after the last contents at the prompt
-;   - Clojure lines in stack traces are peekable and clickable.
-; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+; Evaluating file: day03.clj
+#'aoc-clj.day03/input
+clj꞉aoc-clj.day03꞉> 
+input
+((\4 \6 \7 \. \. \1 \1 \4 \. \.)
+ (\. \. \. \* \. \. \. \. \. \.)
+ (\. \. \3 \5 \. \. \6 \3 \3 \.)
+ (\. \. \. \. \. \. \# \. \. \.)
+ (\6 \1 \7 \* \. \. \. \. \. \.)
+ (\. \. \. \. \. \+ \. \5 \8 \.)
+ (\. \. \5 \9 \2 \. \. \. \. \.)
+ (\. \. \. \. \. \. \7 \5 \5 \.)
+ (\. \. \. \$ \. \* \. \. \. \.)
+ (\. \6 \6 \4 \. \5 \9 \8 \. \.))
+clj꞉aoc-clj.day03꞉> 
+; Evaluating file: day03.clj
+#'aoc-clj.day03/get-char
+clj꞉aoc-clj.day03꞉> 
+(get-char 0 0
+          )
+\4
+clj꞉aoc-clj.day03꞉> 
+(get-char 3
+          5)
+\.
+clj꞉aoc-clj.day03꞉> 
+; Evaluating file: day03.clj
+; Syntax error compiling at (src/aoc_clj/day03.clj:28:3).
+; Can't take value of a macro: #'clojure.core/or
+; Evaluation of file day03.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉aoc-clj.day03꞉> 
+; Evaluating file: day03.clj
+#'aoc-clj.day03/get-part-number
+clj꞉aoc-clj.day03꞉> 
+(get-part-number 0 0
+                 )
+; Execution error (ArityException) at aoc-clj.day03/eval8228 (form-init9991295430361877428.clj:35).
+; Wrong number of args (2) passed to: aoc-clj.day03/get-part-number
+clj꞉aoc-clj.day03꞉> 
+(get-part-number 0 0
+                 false
+                 )
 nil
-clj꞉aoc-clj.core꞉>  ; Use `alt+enter` to evaluate
-clj꞉aoc-clj.core꞉> 
-; Jack-in done.
-clj꞉aoc-clj.core꞉> 
-; Evaluating file: 03.clj
-; Execution error (ClassCastException) at aoc-clj.03/power (03.clj:66).
-; class clojure.lang.PersistentArrayMap cannot be cast to class java.util.Map$Entry (clojure.lang.PersistentArrayMap is in unnamed module of loader 'app'; java.util.Map$Entry is in module java.base of loader 'bootstrap')
-; Evaluation of file 03.clj failed: class clojure.lang.Compiler$CompilerException
-clj꞉aoc-clj.03꞉> 
-#'aoc-clj.03/power
-clj꞉aoc-clj.03꞉> 
-#'aoc-clj.03/power
-clj꞉aoc-clj.03꞉> 
-(power {"red" 3 "green" 3 "blue" 7})
-63
-clj꞉aoc-clj.03꞉> 
-; Execution error (ClassCastException) at aoc-clj.03/power (form-init14269224382814183335.clj:66).
-; class clojure.lang.PersistentArrayMap cannot be cast to class java.util.Map$Entry (clojure.lang.PersistentArrayMap is in unnamed module of loader 'app'; java.util.Map$Entry is in module java.base of loader 'bootstrap')
-clj꞉aoc-clj.03꞉> 
-transformed-cubes
-(({"blue" 3, "green" 7, "red" 10}
-  {"green" 4, "red" 4}
-  {"green" 1, "blue" 7, "red" 5}
-  {"blue" 8, "red" 10}
-  {"blue" 7, "red" 19, "green" 1})
- ({"red" 6, "green" 10}
-  {"green" 11, "red" 4}
-  {"green" 16, "blue" 2}
-  {"green" 7, "blue" 5, "red" 4}
-  {"green" 17, "red" 1, "blue" 1})
- ({"red" 5, "blue" 9, "green" 1} {"red" 5} {"red" 11, "green" 2, "blue" 8} {"green" 2, "blue" 6})
- ({"red" 2, "green" 5} {"blue" 2, "red" 3, "green" 3} {"red" 3, "blue" 2} {"green" 8, "red" 2})
- ({"red" 12, "blue" 13}
-  {"blue" 13, "green" 2, "red" 9}
-  {"blue" 9, "red" 1}
-  {"green" 2, "blue" 12}
-  {"green" 1, "red" 1, "blue" 11})
- ({"blue" 4, "red" 11}
-  {"red" 4}
-  {"green" 1, "red" 7}
-  {"green" 1, "blue" 1}
-  {"blue" 8, "red" 10}
-  {"green" 1, "blue" 2, "red" 8})
- ({"blue" 7, "red" 15, "green" 1}
-  {"green" 5, "red" 17, "blue" 7}
-  {"blue" 5, "green" 1}
-  {"blue" 11, "green" 2, "red" 17}
-  {"green" 14, "red" 9, "blue" 2}
-  {"blue" 6, "red" 19})
- ({"green" 13} {"green" 5} {"blue" 3, "green" 9, "red" 1} {"red" 4, "green" 11, "blue" 4})
- ({"green" 4, "red" 1, "blue" 1}
-  {"green" 4, "blue" 7, "red" 7}
-  {"blue" 9, "red" 4}
-  {"blue" 2, "red" 8, "green" 5}
-  {"blue" 6, "green" 2}
-  {"red" 5, "green" 5, "blue" 10})
- ({"green" 1, "blue" 5, "red" 3}
-  {"green" 4, "red" 9, "blue" 3}
-  {"red" 11, "green" 2, "blue" 5}
-  {"green" 3, "blue" 1, "red" 2}
-  {"red" 6, "blue" 2})
- ({"red" 2, "green" 6, "blue" 12} {"red" 2, "blue" 9, "green" 1} {"green" 12, "blue" 3})
- ({"red" 1, "blue" 1, "green" 12} {"green" 6, "red" 2, "blue" 1} {"red" 6, "green" 6, "blue" 1} {"green" 3, "red" 6})
- ({"red" 5, "green" 19, "blue" 3}
-  {"red" 6, "blue" 7, "green" 11}
-  {"blue" 8, "red" 6}
-  {"blue" 3, "green" 4, "red" 4}
-  {"red" 8, "green" 15, "blue" 5}
-  {"blue" 5, "red" 2, "green" 10})
- ({"blue" 5, "green" 9}
-  {"green" 4, "blue" 6}
-  {"green" 14, "red" 1, "blue" 4}
-  {"blue" 3, "green" 3}
-  {"green" 2}
-  {"blue" 5, "green" 7, "red" 1})
- ({"red" 5, "blue" 8}
-  {"blue" 9, "red" 3}
-  {"red" 5, "green" 1, "blue" 16}
-  {"blue" 1, "red" 3, "green" 2}
-  {"red" 5, "green" 2, "blue" 10})
- ({"blue" 6, "green" 9, "red" 10}
-  {"blue" 8, "red" 9, "green" 14}
-  {"green" 7, "blue" 1, "red" 1}
-  {"red" 8, "green" 5, "blue" 8}
-  {"red" 10, "blue" 5, "green" 14}
-  {"blue" 7, "red" 11, "green" 3})
- ({"blue" 12, "red" 12, "green" 6} {"green" 14, "blue" 17, "red" 4} {"blue" 11, "red" 1, "green" 13})
- ({"blue" 7, "green" 2, "red" 4} {"blue" 1, "green" 2, "red" 4} {"red" 2, "blue" 17})
- ({"red" 3, "green" 9} {"red" 8, "blue" 2, "green" 2} {"blue" 3, "green" 15, "red" 11} {"green" 18, "red" 3, "blue" 1})
- ({"green" 5, "red" 5, "blue" 16} {"blue" 8, "green" 6, "red" 4} {"red" 10, "blue" 11} {"red" 5, "blue" 5, "green" 5})
- ({"red" 1, "blue" 3, "green" 14}
-  {"red" 6, "blue" 6, "green" 17}
-  {"green" 12, "blue" 17, "red" 3}
-  {"green" 15, "red" 1, "blue" 19}
-  {"red" 3, "blue" 18, "green" 4})
- ({"blue" 15}
-  {"blue" 11, "red" 2, "green" 1}
-  {"green" 1, "red" 7}
-  {"red" 1, "blue" 18, "green" 1}
-  {"blue" 16}
-  {"red" 3, "blue" 6})
- ({"blue" 11, "green" 6, "red" 4}
-  {"green" 9, "red" 11, "blue" 8}
-  {"green" 5, "red" 5, "blue" 2}
-  {"green" 11, "blue" 4, "red" 11}
-  {"green" 3, "blue" 9, "red" 2})
- ({"green" 7, "red" 2} {"red" 8, "blue" 1, "green" 15} {"red" 3, "green" 6, "blue" 6})
- ({"blue" 9, "green" 9} {"green" 3, "blue" 7, "red" 1} {"green" 6, "red" 1, "blue" 1} {"green" 6, "red" 1, "blue" 1})
- ({"green" 1, "blue" 15, "red" 1}
-  {"red" 1, "blue" 12, "green" 1}
-  {"blue" 16}
-  {"red" 5, "green" 11, "blue" 14}
-  {"green" 6, "red" 4, "blue" 14})
- ({"red" 14, "green" 9} {"red" 11, "green" 5, "blue" 6} {"red" 1, "blue" 6, "green" 9})
- ({"green" 6, "blue" 1, "red" 9}
-  {"green" 1, "red" 9}
-  {"red" 7}
-  {"red" 11, "blue" 1, "green" 2}
-  {"red" 8, "green" 10}
-  {"green" 6, "blue" 1, "red" 5})
- ({"red" 1, "blue" 19, "green" 3} {"blue" 9, "red" 1} {"green" 8, "blue" 17} {"blue" 11, "green" 4})
- ({"blue" 7} {"blue" 5, "red" 1, "green" 1} {"blue" 3, "red" 1})
- ({"red" 9, "green" 2, "blue" 1} {"red" 5, "green" 1, "blue" 3} {"green" 2, "red" 7} {"green" 2, "red" 12})
- ({"red" 1, "blue" 1, "green" 17} {"blue" 14, "green" 10, "red" 6} {"green" 12, "blue" 11, "red" 3})
- ({"red" 2, "green" 1, "blue" 3} {"blue" 7, "green" 4} {"red" 1, "green" 3, "blue" 5})
- ({"blue" 9, "green" 1, "red" 9}
-  {"blue" 12, "green" 2, "red" 12}
-  {"blue" 3, "red" 12}
-  {"green" 2, "blue" 14, "red" 11}
-  {"red" 10, "blue" 12})
- ({"blue" 6, "red" 2} {"blue" 5} {"green" 6, "blue" 9, "red" 3} {"green" 3, "red" 1, "blue" 2})
- ({"blue" 9, "green" 4, "red" 6}
-  {"red" 2, "green" 4}
-  {"red" 7, "green" 3}
-  {"green" 6, "blue" 2}
-  {"red" 3, "blue" 4, "green" 3}
-  {"green" 3, "red" 4, "blue" 16})
- ({"green" 2, "red" 8, "blue" 4}
-  {"red" 3, "blue" 4, "green" 2}
-  {"blue" 5, "green" 3}
-  {"blue" 9, "green" 15}
-  {"red" 5, "green" 11, "blue" 7})
- ({"red" 12, "blue" 1} {"red" 10, "green" 3, "blue" 2} {"blue" 7, "green" 3, "red" 8} {"red" 14, "green" 2})
- ({"green" 16, "red" 2, "blue" 17}
-  {"red" 6, "green" 4, "blue" 13}
-  {"blue" 7, "green" 1, "red" 4}
-  {"green" 2, "blue" 3}
-  {"green" 12, "red" 6, "blue" 17}
-  {"red" 5, "blue" 2, "green" 6})
- ({"green" 3, "blue" 4, "red" 2}
-  {"green" 2, "red" 3}
-  {"blue" 6, "red" 2, "green" 6}
-  {"green" 5}
-  {"blue" 3, "red" 1, "green" 5})
- ({"green" 13, "red" 11}
-  {"green" 3, "red" 2, "blue" 1}
-  {"blue" 1, "green" 3, "red" 9}
-  {"red" 12, "green" 11}
-  {"red" 9, "green" 1}
-  {"green" 9, "red" 4})
- ({"green" 4, "blue" 2}
-  {"blue" 6, "green" 10}
-  {"blue" 13, "red" 3, "green" 6}
-  {"blue" 11, "green" 17}
-  {"blue" 8, "red" 5})
- ({"green" 10, "blue" 2, "red" 10}
-  {"red" 3, "blue" 3, "green" 5}
-  {"green" 10, "red" 11, "blue" 4}
-  {"green" 5}
-  {"green" 7, "red" 13, "blue" 2})
- ({"red" 4, "blue" 1, "green" 5}
-  {"blue" 1, "red" 8, "green" 3}
-  {"red" 11, "green" 1, "blue" 1}
-  {"green" 2, "red" 12, "blue" 1}
-  {"blue" 1, "red" 12}
-  {"red" 14, "green" 3})
- ({"green" 4, "red" 5, "blue" 7}
-  {"red" 10, "green" 8, "blue" 3}
-  {"blue" 12, "green" 1, "red" 13}
-  {"red" 1, "blue" 3, "green" 7})
- ({"blue" 5, "red" 13}
-  {"red" 15, "green" 3, "blue" 17}
-  {"red" 8, "green" 2, "blue" 1}
-  {"green" 1, "red" 7, "blue" 16}
-  {"blue" 4, "red" 10})
- ({"red" 2, "green" 3} {"blue" 2, "red" 9, "green" 15} {"green" 7, "red" 4} {"blue" 3, "red" 13, "green" 9})
- ({"green" 11, "red" 4, "blue" 9}
-  {"blue" 1, "green" 7}
-  {"blue" 4, "red" 4}
-  {"red" 4, "blue" 4, "green" 2}
-  {"green" 9, "blue" 2, "red" 2})
- ({"green" 10, "blue" 6} {"blue" 2, "green" 5, "red" 1} {"green" 5, "blue" 4} {"green" 11, "red" 3, "blue" 3})
- ({"red" 2, "green" 15, "blue" 1}
-  {"green" 8, "blue" 7}
-  {"blue" 4, "green" 8}
-  {"blue" 7, "green" 17}
-  {"blue" 5, "green" 6, "red" 2}
-  {"green" 16, "red" 2, "blue" 1})
- ...)
-clj꞉aoc-clj.03꞉> 
-72513
-clj꞉aoc-clj.03꞉> 
-; Syntax error compiling at (src/aoc_clj/day02.clj:61:36).
-; Unable to resolve symbol: get-elem in this context
-clj꞉aoc-clj.day02꞉> 
-; Evaluating file: day02.clj
-72513
-clj꞉aoc-clj.day02꞉> 
-; nREPL Connection was closed
+clj꞉aoc-clj.day03꞉> 
