@@ -11,6 +11,7 @@
 (defn get-char [i j] 
   (-> schematic
       (nth i) 
+      (nth 0)
       (nth j)))
 
 (defn as-digit [c] (- (int c) (int \0)))
@@ -31,17 +32,17 @@
                   (map is-symbol?)))) ;; check if some is a symbol
 
 (defn get-part-number [i j attached]
-  (if (or (>= h i) (>= w j))
+  (if (or (>= i h) (>= j w))
     nil
+
     (let [c (get-char i j) 
           att (or attached (is-symbol-around? i j))] 
-      
       (if (is-digit? c) ;; the current char is a digit
-        (let [rest (get-part-number i (inc j) att)]
-          
+        (let [rest (get-part-number i (inc j) att)] 
           (if (some? rest) 
-            
             (let [[n a] rest] 
               [(+ (* 10 (as-digit c)) n) (or a att)])
+            
             [(as-digit c) att])) 
+        
         nil))))
